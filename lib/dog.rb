@@ -3,7 +3,7 @@ class Dog
   attr_reader :id
 
   #abtraction attempts
-  def self.table_name
+  def self.table_name #must use self.class when not within a class method
     "#{self.to_s.downcase}s"
   end
 
