@@ -64,6 +64,7 @@ class Dog
     SQL
     rows = DB[:conn].execute(sql, id)
     # self.reify_from_row(rows.first)
+    dog = Dog.new(row[0], row[1], row[2])
   end
 
 
