@@ -67,7 +67,7 @@ class Dog
     if !result.empty?
       self.reify_from_row(result)
     else
-      dog = self.create(name, breed)
+      dog = self.create(name: name, breed: breed)
     end
     dog
   end
