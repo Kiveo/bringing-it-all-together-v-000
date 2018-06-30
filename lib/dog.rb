@@ -80,7 +80,12 @@ class Dog
     sql = "SELECT * FROM dogs WHERE name = ? LIMIT 1"
     dog_row = DB[:conn].execute(sql, name)[0]
     dog = self.new_from_db(dog_row)
-    # dog
   end
 
+  def update
+    sql = "UPDATE dogs SET name = ?, breed = ? WHERE id = ?"
+    updated_row = DB[:conn].execute(sql, self.name, self.breed, self.id)[0]
+    # self.new_from_db(updated_row)
+  end 
+  
 end
