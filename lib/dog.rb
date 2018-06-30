@@ -62,7 +62,7 @@ class Dog
     self.reify_from_row(row)
   end
 
-  def self.find_or_create_by(name:, breed:)
+  def self.find_or_create_by(name: name, breed: breed)
     result = DB[:conn].execute("SELECT * FROM #{self.table_name} WHERE name = ? AND breed = ?", name, breed)[0]
     if !result.empty?
       self.reify_from_row(result)
