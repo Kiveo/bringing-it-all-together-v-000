@@ -8,7 +8,7 @@ class Dog
   end
 
   #standard methods/sql
-  def initialize(name: Alpha, breed: Dog, id: nil)
+  def initialize(id: nil, name:, breed:)
     @name = name
     @breed = breed
     @id = id
