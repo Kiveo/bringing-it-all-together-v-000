@@ -86,6 +86,6 @@ class Dog
     sql = "UPDATE dogs SET name = ?, breed = ? WHERE id = ?"
     updated_row = DB[:conn].execute(sql, self.name, self.breed, self.id)[0]
     # self.new_from_db(updated_row)
-  end 
-  
+  end
+
 end
