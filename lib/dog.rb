@@ -62,7 +62,7 @@ class Dog
     sql = <<-SQL
       SELECT * FROM #{self.table_name} WHERE id = ?
     SQL
-    DB[:conn].execute(sql, id)
+    row = DB[:conn].execute(sql, id)
     self.reify_from_row(row)
   end
 
