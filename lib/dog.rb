@@ -8,10 +8,10 @@ class Dog
   end
 
   def self.reify_from_row(row)
-    self.new.tap do |dog|
-      dog.id  = row[0]
-      dog.name = row[1]
-      dog.breed = row[2]
+    self.new.tap do |d|
+      d.id  = row[0]
+      d.name = row[1]
+      d.breed = row[2]
     end
   end
   #----------------------------------------------------
