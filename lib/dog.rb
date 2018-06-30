@@ -7,6 +7,12 @@ class Dog
     "#{self.to_s.downcase}s"
   end
 
+  def self.reify_from_row(row)
+    self.new.tap do |p|
+      p.id  = row[0]
+      p.name = row[1]
+      p.breed = row[2]
+  end
   #standard methods/sql
   def initialize(id: nil, name:, breed:)
     @name = name
@@ -57,5 +63,6 @@ class Dog
     DB[:conn].execute(sql, id)
     self.reify_from_row(row)
   end
+
 
 end
