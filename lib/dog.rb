@@ -26,7 +26,7 @@ class Dog
   end
 
   def self.drop_table
-    sql = "DROP TABLE dogs"
+    sql = "DROP TABLE #{self.table_name}"
     DB[:conn].execute(sql)
   end
 
@@ -35,11 +35,11 @@ class Dog
       self.update
     else
       sql = <<-SQL
-        INSERT INTO dogs (name, breed)
+        INSERT INTO #{self.table_name} (name, breed)
         VALUES (?, ?)
       SQL
       DB[:conn].execute(sql, self.name, self.breed)
-      @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
+      @id = DB[:conn].execute("SELECT last_insert_rowid() FROM #{self.table_name}")[0][0]
     end
     self
   end
