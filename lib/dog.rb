@@ -63,10 +63,10 @@ class Dog
       SELECT * FROM #{self.table_name} WHERE id = ?
     SQL
     row = DB[:conn].execute(sql, id)[0]
-    # self.reify_from_row(rows.first)
-    id = row[0]
-    name = row[1]
-    breed = row[2]
+    self.reify_from_row(row)
+    # id = row[0]
+    # name = row[1]
+    # breed = row[2]
     dog = Dog.new(id: id, name: name, breed: breed)
   end
 
