@@ -2,18 +2,18 @@ class Dog
   attr_accessor :name, :breed
   attr_reader :id
 
-  #abtraction attempts 
-  def self.table_name 
-    
-  end 
-  
-  #standard methods/sql 
+  #abtraction attempts
+  def self.table_name
+    "#{self.to_s.downcase}s"
+  end
+
+  #standard methods/sql
   def initialize(name: Alpha, breed: Dog, id: nil)
     @name = name
     @breed = breed
     @id = id
   end
-  
+
   def self.create_table
     sql = <<-SQL
       CREATE TABLE IF NOT EXISTS dogs (
