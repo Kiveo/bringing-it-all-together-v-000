@@ -7,13 +7,6 @@ class Dog
     "#{self.to_s.downcase}s"
   end
 
-  def self.reify_from_row(row)
-    self.new.tap do |d|
-      d.id:  => row[0]
-      name: => row[1]
-      breed: => row[2]
-    end
-  end
   #----------------------------------------------------
   #standard methods/sql
   def initialize(id: nil, name:, breed:)
