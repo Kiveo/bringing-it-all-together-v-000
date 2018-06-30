@@ -13,6 +13,7 @@ class Dog
       p.name = row[1]
       p.breed = row[2]
   end
+  #----------------------------------------------------
   #standard methods/sql
   def initialize(id: nil, name:, breed:)
     @name = name
