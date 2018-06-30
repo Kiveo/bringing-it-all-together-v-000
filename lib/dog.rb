@@ -66,7 +66,7 @@ class Dog
     dog = DB[:conn].execute("SELECT * FROM dogs WHERE name = ? AND breed = ?", name, breed)
     if !dog.empty?
       dog_stats = dog[0]
-      dog = Dog.new(id: dog_stats[0], name: dog_stats[1], breed: dog_stats[2])  #why does it require key: val (not simply the value) elsewhere, but not here?
+      dog = Dog.new(id: dog_stats[0], name: dog_stats[1], breed: dog_stats[2]) 
     else
       dog = self.create(name: name, breed: breed)
     end
