@@ -80,7 +80,7 @@ class Dog
     sql = "SELECT * FROM dogs WHERE name = ? LIMIT 1"
     dog_row = DB[:conn].execute(sql, name)[0]
     dog = self.new_from_db(dog_row)
-    # dog 
-  end 
+    # dog
+  end
 
 end
